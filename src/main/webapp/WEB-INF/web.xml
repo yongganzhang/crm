@@ -5,8 +5,6 @@
          version="2.5">
   <display-name>crm</display-name>
 
-
-
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-context.xml</param-value>
