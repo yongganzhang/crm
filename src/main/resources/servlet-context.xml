@@ -37,4 +37,6 @@
     </mvc:annotation-driven>
 
 
+    <bean  class="com.shsxt.crm.core.framework.exception.handler.GlobalExceptionHandler"/>
+
 </beans>
