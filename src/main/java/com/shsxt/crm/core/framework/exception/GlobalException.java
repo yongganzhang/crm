@@ -10,7 +10,6 @@ import lombok.Setter;
 /**
  *  全局 异常
  */
-
 public class GlobalException extends RuntimeException {
 
     private String code;

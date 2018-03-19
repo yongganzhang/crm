@@ -30,8 +30,5 @@ public interface ResultConstant {
 	 * 失败操作状态码
 	 */
 	public final static  String  FAIL_MSG = "操作失败";
-	
-	
-	
 
 }
