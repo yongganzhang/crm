@@ -73,8 +73,6 @@
                     <include>**/*.properties</include>
                 </includes>
             </resource>
-
-
         </resources>
     </build>
 
@@ -240,6 +238,12 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>${freemarker_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
         </dependency>
     </dependencies>
 

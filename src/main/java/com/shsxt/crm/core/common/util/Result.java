@@ -10,20 +10,19 @@ import java.io.Serializable;
  * 
  * @author Mr.YongGan.Zhang
  *
- * @param <T>
  */
-public class Result<T> implements Serializable {
+public class Result implements Serializable {
 
 	private static final long serialVersionUID = 4715302481089778942L;
 
 	private String code;
 	private String msg;
-	private T data;
+	private Object data;
 
 	public Result() {
 	}
 
-	public Result(String code, String msg, T data) {
+	public Result(String code, String msg, Object data) {
 		this.code = code;
 		this.msg = msg;
 		this.data = data;
@@ -49,12 +48,12 @@ public class Result<T> implements Serializable {
 		return this.data;
 	}
 
-	public void setData(T data) {
+	public void setData(Object data) {
 		this.data = data;
 	}
 
 	public static Result success(String msg, Object data) {
-		Result<Object> result = new Result();
+		Result result = new Result();
 		result.setCode(ResultConstant.SUCCESS_CODE);
 		result.setMsg(msg);
 		result.setData(data);
@@ -63,14 +62,14 @@ public class Result<T> implements Serializable {
 
 	public static Result success(String msg) {
 
-		Result<Object> result = new Result();
+		Result result = new Result();
 		result.setCode(ResultConstant.SUCCESS_CODE);
 		result.setMsg(msg);
 		return result;
 	}
 
 	public static Result fail(String msg, Object data) {
-		Result<Object> result = new Result();
+		Result result = new Result();
 		result.setCode(ResultConstant.FAIL_CODE);
 		result.setMsg(msg);
 		result.setData(data);
@@ -79,14 +78,14 @@ public class Result<T> implements Serializable {
 
 	public static Result fail(String msg) {
 
-		Result<Object> result = new Result();
+		Result  result = new Result();
 		result.setCode(ResultConstant.FAIL_CODE);
 		result.setMsg(msg);
 		return result;
 	}
 
 	public static Result fail(String code, String msg) {
-		Result<Object> result = new Result();
+		Result result = new Result();
 		result.setCode(code);
 		result.setMsg(msg);
 		return result;
