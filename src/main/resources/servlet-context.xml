@@ -36,7 +36,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <mvc:interceptors>
+    <!--<mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**" />
             <mvc:exclude-mapping path="/user/userLogin" />
@@ -48,7 +48,9 @@
             <mvc:exclude-mapping path="/zTree_v3/**" />
             <bean class="com.shsxt.crm.core.framework.interceptor.PermissionInterceptor" />
         </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
+
+    <mvc:default-servlet-handler/>
 
     <!-- 全局异常处理 -->
     <bean  class="com.shsxt.crm.core.framework.exception.handler.GlobalExceptionHandler"/>

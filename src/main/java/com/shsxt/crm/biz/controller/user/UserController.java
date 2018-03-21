@@ -1,4 +1,4 @@
-package com.shsxt.crm.biz.controller;
+package com.shsxt.crm.biz.controller.user;
 
 import com.shsxt.crm.biz.service.IUserService;
 import com.shsxt.crm.core.common.util.Result;
@@ -15,8 +15,8 @@ public class UserController extends BaseController {
     private IUserService userService;
 
 
-    @RequestMapping("/userLogin")
-//    @ResponseBody
+    @PostMapping("/userLogin")
+    @ResponseBody
     public Result userLogin (String userName,String userPwd) {
         return userService.userLogin(userName,userPwd);
     }
