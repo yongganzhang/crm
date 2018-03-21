@@ -42,7 +42,6 @@ public final class JsonUtil {
 	/**
 	 * 
 	 * @param response
-	 * @param date
 	 */
 	public static void write(HttpServletResponse response, String json) {
 

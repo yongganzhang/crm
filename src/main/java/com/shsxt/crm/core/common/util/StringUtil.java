@@ -29,17 +29,4 @@ public final class StringUtil {
 		return !isEmpty(str);
 	}
 
-	/**
-	 * 字符串切割
-	 * @param str
-	 * @param regex
-	 * @return
-	 */
-	public  static synchronized String[] splitString (final String str, String regex) {
-		if (isNotEmpty(str)) {
-			return  str.split(regex);
-		}
-		return  null;
-	}
-	
 }

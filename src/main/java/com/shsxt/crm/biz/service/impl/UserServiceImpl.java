@@ -27,9 +27,6 @@ public class UserServiceImpl  implements IUserService{//提示  alt + enter
     @Override
     public Result userLogin(String userName, String userPwd) {
 
-        int i = 1/0;
-
-
         if (StringUtil.isEmpty(userName) || StringUtil.isEmpty(userPwd)) {
             return Result.fail("用户登录失败，请输入账户或密码。");
         }
@@ -42,6 +39,5 @@ public class UserServiceImpl  implements IUserService{//提示  alt + enter
         VerificationLoginUtil.userLoginTools(session,resp,user);
 
         return Result.success("登录成功");
-//        throw  new GlobalException();
     }
 }
