@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="${ctx}/css/dandelion.css"  media="screen" />
 
-    <title>404错误页面</title>
+    <title>Sorry</title>
 
 </head>
 
@@ -29,15 +29,20 @@
 
                 <div id="da-error-pin"></div>
                 <div id="da-error-code">
-                    error <span>404</span>                    </div>
+                    error <span>绝对只是一个意外</span>                    </div>
 
                 <h1 class="da-error-heading">哎哟喂！页面让狗狗叼走了！</h1>
-                <p>大家可以到狗狗没有叼过的地方看看！ <a href="#">点击进入首页</a></p>
+                <p>大家可以到狗狗没有叼过的地方看看！ <a href="#" onclick="toIndexHtml()">点击进入首页</a></p>
             </div>
         </div>
     </div>
 
 </div>
 
+<script >
+    function toIndexHtml () {
+        window.location.href = "/crm/index";
+    }
+</script>
 </body>
 </html>
