@@ -32,7 +32,7 @@
                     error <span>绝对只是一个意外</span>                    </div>
 
                 <h1 class="da-error-heading">哎哟喂！页面让狗狗叼走了！</h1>
-                <p>大家可以到狗狗没有叼过的地方看看！ <a href="#" onclick="toIndexHtml()">点击进入首页</a></p>
+                <p style="position: absolute;z-index: 10;">大家可以到狗狗没有叼过的地方看看！ <a href="#" onclick="toIndexHtml()">点击进入首页</a></p>
             </div>
         </div>
     </div>
