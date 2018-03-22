@@ -27,8 +27,6 @@ public class UserServiceImpl  implements IUserService{//提示  alt + enter
     @Override
     public Result userLogin(String userName, String userPwd) {
 
-        int i= 1/0;
-
         if (StringUtil.isEmpty(userName) || StringUtil.isEmpty(userPwd)) {
             return Result.fail("用户登录失败，请输入账户或密码。");
         }

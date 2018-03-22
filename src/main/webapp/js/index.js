@@ -28,7 +28,7 @@ function  userLogin () {
         dataType : "json",
         success: function(data){
             if (data.code == 200) {
-                alert("登录成功")
+                window.location.href = "main/index";
             }else {
                 alert(data.msg);
             }

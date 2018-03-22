@@ -15,7 +15,7 @@ public class UserController extends BaseController {
     private IUserService userService;
 
 
-    @GetMapping("/userLogin")
+    @RequestMapping("/userLogin")
     @ResponseBody
     public Result userLogin (String userName,String userPwd) {
         return userService.userLogin(userName,userPwd);
