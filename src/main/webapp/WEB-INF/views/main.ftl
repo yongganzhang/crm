@@ -3,7 +3,7 @@
     <#include "common.ftl" >
     <title>Crm | 后台主页</title>
     <script type="text/javascript" src="${ctx}/js/jquery.cookie.js"></script>
-    <#--<script type="text/javascript" src="${ctx}/js/main.js"></script>-->
+    <script type="text/javascript" src="${ctx}/js/main.js"></script>
 </head>
 <body class="easyui-layout">
 <div region="north" style="height: 78px;background-color: #E0ECFF">
@@ -30,10 +30,10 @@
        <#if userPermission?seq_contains('10')>
         <div title="营销管理" data-options="selected:true,iconCls:'icon-yxgl'" style="padding: 10px">
             <#if userPermission?seq_contains('1010')>  
-            <a href="javascript:openTab('营销机会管理','marketing/1/index.shtml','icon-yxjhgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-yxjhgl'" style="width: 150px">营销机会管理</a>
+            <a href="javascript:openTab('营销机会管理','marketing/1/index','icon-yxjhgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-yxjhgl'" style="width: 150px">营销机会管理</a>
             </#if>
              <#if userPermission?seq_contains('1020')>
-            <a href="javascript:openTab('客户开发计划','marketing/2/index.shtml','icon-khkfjh')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khkfjh'" style="width: 150px">客户开发计划</a>
+            <a href="javascript:openTab('客户开发计划','marketing/2/index','icon-khkfjh')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khkfjh'" style="width: 150px">客户开发计划</a>
             </#if>
         </div>
         </#if>

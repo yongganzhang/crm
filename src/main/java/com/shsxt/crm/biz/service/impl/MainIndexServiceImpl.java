@@ -33,6 +33,10 @@ public class MainIndexServiceImpl implements IMainIndexService {
         //登录 获取获取权限
         User user = VerificationLoginUtil.getUserInfoFromSession(req);
 
+        //设置 用户姓名和别名
+        session.setAttribute("userName",user.getUserName());
+        session.setAttribute("trueName",user.getTrueName());
+
         // 权限操作值
         List<String> aclList = userPermissionService.queryUserAclByUid(user.getId());
         session.setAttribute("userPermission",aclList);

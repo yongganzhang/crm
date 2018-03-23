@@ -28,4 +28,8 @@
     </select>
 
 
-</mapper>at
+    <update id="updateUserPwdByUserName" parameterType="user">
+            UPDATE t_user SET user_pwd = #{userPwd}, update_date = #{updateDate} WHERE  user_name = #{userName}
+    </update>
+
+</mapper>

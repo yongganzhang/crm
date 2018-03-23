@@ -21,4 +21,10 @@ public class UserController extends BaseController {
         return userService.userLogin(userName,userPwd);
     }
 
+    @RequestMapping("/modifyPassword")
+    @ResponseBody
+    public Result userModifyPassword (String userName,String oldPassword,String  newPassword,String confirmPassword ) {
+        return userService.userModifyPassword(userName,oldPassword,newPassword,confirmPassword);
+    }
+
 }
