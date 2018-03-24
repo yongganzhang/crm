@@ -1,4 +1,4 @@
-package com.shsxt.crm.core.framework.model;
+package com.shsxt.crm.core.framework.dao;
 
 import com.shsxt.crm.core.framework.constant.CrmConstant;
 

@@ -7,11 +7,11 @@ function  userLogin () {
     // 用户密码
     var userPwd =  $("#userPwd").val();
 
-    if (!isEmpty(userName)) {
+    if (isEmpty(userName)) {
         alert("用户名不能为空!");
         return;
     }
-    if (!isEmpty(userPwd)) {
+    if (isEmpty(userPwd)) {
         alert("密码不能为空!");
         return;
     }

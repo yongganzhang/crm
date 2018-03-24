@@ -2,7 +2,7 @@ package com.shsxt.crm.biz.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.shsxt.crm.core.framework.constant.CrmConstant;
-import com.shsxt.crm.core.framework.model.BaseQuery;
+import com.shsxt.crm.core.framework.dao.BaseQuery;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;

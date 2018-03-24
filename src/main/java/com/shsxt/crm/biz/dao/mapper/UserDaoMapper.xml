@@ -5,7 +5,6 @@
 
 <mapper namespace="com.shsxt.crm.biz.dao.UserDao">
 
-
     <resultMap id="BaseResultMap" type="com.shsxt.crm.biz.model.User" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="user_name" property="userName" jdbcType="VARCHAR" />
@@ -31,5 +30,11 @@
     <update id="updateUserPwdByUserName" parameterType="user">
             UPDATE t_user SET user_pwd = #{userPwd}, update_date = #{updateDate} WHERE  user_name = #{userName}
     </update>
+
+    <select id="queryAllCustomerManager"  resultMap="BaseResultMap">
+          SELECT true_name 'trueName'  FROM t_user u  LEFT JOIN t_user_role t on (u.id =  t.user_id)
+            LEFT JOIN t_role r on (t.role_id = r.id)
+            WHERE r.role_name = '客户经理'
+    </select>
 
 </mapper>

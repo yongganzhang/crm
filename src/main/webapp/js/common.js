@@ -50,7 +50,7 @@ function formatZero(n){
 }
 
 function  isNull (targetObj) {
-    if (targetObj == null || targetObj == 'null' || typeof ( 'undefined')) {
+    if (targetObj == null || targetObj == 'null' ||  (typeof (targetObj) == 'undefined')) {
         return  true;
     }
     return false;
