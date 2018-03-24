@@ -11,6 +11,7 @@ import com.shsxt.crm.core.common.util.VerificationLoginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -85,4 +86,32 @@ public class MarketingServiceImpl implements IMarketingService {
         }
         return Result.fail("更新失败");
     }
+
+
+    /***
+     * 查询 营销机会
+     * @param page
+     * @param rows
+     * @return
+     */
+    @Override
+    public Map<String, Object> querySaleChancesDeving(Integer page, Integer rows) {
+
+        List<SaleChance> saleChances = marketingDao.querySaleChancesDeving();
+
+        //1.构建分页参数
+        PageHelper.startPage(page,rows);
+        PageInfo<SaleChance> pageInfo = new PageInfo<>(saleChances);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("total", pageInfo.getTotal());
+        map.put("rows", pageInfo.getList());
+        return map;
+    }
+
+    @Override
+    public SaleChance querySaleChanceById(int sid) {
+        return marketingDao.querySaleChanceById(sid);
+    }
+
 }

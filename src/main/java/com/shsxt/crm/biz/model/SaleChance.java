@@ -76,7 +76,9 @@ public class SaleChance  extends BaseQuery{
 
     /**
      * state
-     * 
+     *
+     *  0 : 停止开发
+     *  1 : 开发
      */
     private Integer state;
 

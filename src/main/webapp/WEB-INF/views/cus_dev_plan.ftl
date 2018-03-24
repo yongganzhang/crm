@@ -7,7 +7,7 @@
 </head>
 <body>
 	<table id="dg" class="easyui-datagrid"  pagination=true 
-	     rownumbers=true   singeSelect="true"  fit=true url="${ctx}/marketing/querySaleChancesByParams?state=1">   
+	     rownumbers=true   singeSelect="true"  fit=true url="${ctx}/marketing/querySaleChancesDeving">
     <thead>   
         <tr>
          <th field='id'>id</th>  

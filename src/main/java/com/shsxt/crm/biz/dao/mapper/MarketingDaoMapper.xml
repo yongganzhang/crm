@@ -116,4 +116,17 @@
     </update>
 
 
+    <select id="querySaleChancesDeving"  resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM  t_sale_chance
+        WHERE  state =  1   AND  is_valid =  1
+    </select>
+
+
+    <select id="querySaleChanceById"  resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM  t_sale_chance
+           WHERE  id = #{sid}   AND  is_valid =  1
+    </select>
+
 </mapper>

@@ -13,4 +13,9 @@ public interface IMarketingService {
 
     public Result updateSaleChanceInfo (SaleChance saleChance);
 
+
+    public Map<String, Object> querySaleChancesDeving (Integer page ,Integer rows);
+
+    public SaleChance querySaleChanceById (int sid);
+
 }

@@ -6,10 +6,7 @@ import com.shsxt.crm.core.common.util.Result;
 import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -67,4 +64,21 @@ public class MarketingController extends BaseController {
     public Result updateSaleChanceInfo (SaleChance saleChance) {
         return  marketingService.updateSaleChanceInfo(saleChance);
     }
+
+
+    /**
+     * 查询营销机会数据
+     * 默认 state = 1
+     *
+     * @param
+     * @return
+     */
+    @PostMapping("/querySaleChancesDeving")
+    @ResponseBody
+    public Map<String, Object> querySaleChancesDeving (
+            @RequestParam(defaultValue = "1")  Integer page,
+             @RequestParam(defaultValue = "10")  Integer rows) {
+        return marketingService.querySaleChancesDeving(page,rows);
+    }
+
 }
