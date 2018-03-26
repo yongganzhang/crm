@@ -40,7 +40,7 @@
         <#if userPermission?seq_contains('20')>
         <div title="客户管理"  data-options="iconCls:'icon-khgl'" style="padding:10px;">
              <#if userPermission?seq_contains('2010')>
-            <a href="javascript:openTab('客户信息管理','customer/index.shtml','icon-khxxgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khxxgl'" style="width: 150px;">客户信息管理</a>
+            <a href="javascript:openTab('客户信息管理','customer/index','icon-khxxgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khxxgl'" style="width: 150px;">客户信息管理</a>
             </#if>
              <#if userPermission?seq_contains('2020')>
             <a href="javascript:openTab('客户流失管理','customer_loss/index.shtml','icon-khlsgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khlsgl'" style="width: 150px;">客户流失管理</a>

@@ -2,7 +2,9 @@ package com.shsxt.crm.biz.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.shsxt.crm.biz.dao.CusDevPlanDao;
 import com.shsxt.crm.biz.dao.MarketingDao;
+import com.shsxt.crm.biz.model.CusDevPlan;
 import com.shsxt.crm.biz.model.SaleChance;
 import com.shsxt.crm.biz.model.User;
 import com.shsxt.crm.biz.service.IMarketingService;
@@ -27,6 +29,9 @@ public class MarketingServiceImpl implements IMarketingService {
 
     @Autowired(required = false)
     private HttpServletRequest req;
+
+    @Autowired
+    private CusDevPlanDao cusDevPlanDao;
 
 
     /**
@@ -113,5 +118,65 @@ public class MarketingServiceImpl implements IMarketingService {
     public SaleChance querySaleChanceById(int sid) {
         return marketingDao.querySaleChanceById(sid);
     }
+
+    @Override
+    public Map<String, Object> queryCusDevPlansByParams(Integer saleChanceId,int page , int rows) {
+
+        Map<String,Object >  params = new HashMap<>();
+
+        params.put("saleChanceId",saleChanceId);
+        params.put("isValid","1");
+        List<CusDevPlan> cusDevPlans = cusDevPlanDao.find(params);
+
+        PageHelper.startPage(page, rows);
+        PageInfo<CusDevPlan> pageInfo = new PageInfo<>(cusDevPlans);
+
+        Map<String,Object >  map  = new HashMap<>();
+        map.put("total", pageInfo.getTotal());
+        map.put("rows", pageInfo.getList());
+        return map;
+    }
+
+    @Override
+    public Result insertCusDevPlans(CusDevPlan cusDevPlan) {
+
+        cusDevPlan.setCreateDate(new Date());
+        cusDevPlan.setUpdateDate(new Date());
+        cusDevPlan.setIsValid(1);
+
+        long ste = cusDevPlanDao.saveSte(cusDevPlan);
+        if (ste == 1) {
+            return  Result.success("添加成功") ;
+        }
+        return Result.fail("添加失败");
+    }
+
+    @Override
+    public Result updateCusDevPlans(CusDevPlan cusDevPlan) {
+
+        cusDevPlan.setUpdateDate(new Date());
+        long ste = cusDevPlanDao.updateSte(cusDevPlan);
+
+        if (ste == 1) {
+            return  Result.success("更新成功") ;
+        }
+        return Result.fail("更新失败");
+    }
+
+    @Override
+    public Result delCusDevPlans(Integer cusDevPlanId) {
+
+        CusDevPlan cusDevPlan = new CusDevPlan();
+        cusDevPlan.setId(cusDevPlanId);
+        cusDevPlan.setIsValid(0);
+
+        long ste = cusDevPlanDao.updateSte(cusDevPlan);
+        if (ste == 1) {
+            return  Result.success("删除成功") ;
+        }
+        return Result.fail("删除失败");
+
+    }
+
 
 }

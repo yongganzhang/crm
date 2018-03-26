@@ -1,8 +1,10 @@
 package com.shsxt.crm.biz.model;
 
+import com.shsxt.crm.core.framework.dao.BaseQuery;
+
 import java.util.Date;
 
-public class Customer {
+public class Customer extends BaseQuery {
     /**
      * id
      * 
