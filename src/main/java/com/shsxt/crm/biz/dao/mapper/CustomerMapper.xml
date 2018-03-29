@@ -39,10 +39,10 @@
     <if test="id != null" >
        and id = #{id,jdbcType=INTEGER}
     </if>
-    <if test="khno != null" >
+    <if test="khno != null and khno != ''" >
        and khno = #{khno,jdbcType=VARCHAR}
     </if>
-    <if test="name != null" >
+    <if test="name != null and name != ''" >
        and name = #{name,jdbcType=VARCHAR}
     </if>
     <if test="area != null" >
@@ -428,4 +428,14 @@
       update_date = #{updateDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="queryCustomerBeforeSixMonth" resultMap="BaseResultMap">
+
+    SELECT  <include refid="Base_Column_List" />
+          FROM t_customer
+    WHERE  	create_date <![CDATA[  <  ]]> date_sub( now( ), INTERVAL 6 MONTH )
+
+  </select>
+
 </mapper>

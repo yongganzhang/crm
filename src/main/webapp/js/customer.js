@@ -83,7 +83,7 @@ function openCustomerOtherInfo(title,type){
 		return;
 	}
 	
-	window.parent.openTab(title,ctx+"/customer/toOtherPage/"+type+"/"+rows[0].id);
+	window.parent.openTab(title,"customer/toOtherPage/"+type+"/"+rows[0].id);
 }
 
 

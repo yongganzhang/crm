@@ -103,7 +103,7 @@
 					<td>
 					<input class="easyui-combobox" id="level" name="level"
 						panelHeight='auto' editable=false valueField='dataDicValue' 
-						textField='dataDicValue' url="${ctx}/customer/queryDataDicValueByDataDicName?dataDicName=客户等级"
+						textField='dataDicValue' url="${ctx}/dic/queryDataDicValueByDataDicName?dataDicName=客户等级"
 						 />&nbsp;<font
 						color="red">*</font>
 					</td> 

@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.shsxt.crm.biz.dao.CustomerDao;
 import com.shsxt.crm.biz.model.Customer;
 import com.shsxt.crm.biz.service.ICustomerService;
+import com.shsxt.crm.core.common.util.MathUtil;
 import com.shsxt.crm.core.common.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +59,9 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public Result insertCustomers(Customer customer) {
 
+        //客户编号
+        customer.setKhno(MathUtil.genereateKhCode());
+
         customer.setIsValid(1);
         customer.setCreateDate(new Date());
         customer.setUpdateDate(new Date());
@@ -97,5 +101,10 @@ public class CustomerServiceImpl implements ICustomerService {
         }
         return Result.fail("删除失败");
 
+    }
+
+    @Override
+    public Customer queryCustomerById(int id) {
+        return customerDao.get(id);
     }
 }

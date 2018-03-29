@@ -29,4 +29,7 @@ public interface ICustomerService {
 
     public Result delCustomers (Integer id );
 
+
+    public  Customer  queryCustomerById (int id );
+
 }
