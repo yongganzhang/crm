@@ -3,6 +3,8 @@ package com.shsxt.crm.biz.controller.customer;
 import com.shsxt.crm.biz.model.Customer;
 import com.shsxt.crm.biz.service.ICustomerService;
 import com.shsxt.crm.core.common.util.Result;
+import com.shsxt.crm.core.framework.annotation.CheckType;
+import com.shsxt.crm.core.framework.annotation.Permission;
 import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +31,8 @@ public class CustomerController  extends BaseController {
     }
 
 
-    @PostMapping("/queryAllCustomers")
+    @Permission(checkType = CheckType.LOGIN)
+    @RequestMapping("/queryAllCustomers")
     @ResponseBody
     public List<Customer> queryAllCustomers () {
         return customerService.queryAllCustomers();

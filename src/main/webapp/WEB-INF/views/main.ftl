@@ -49,11 +49,11 @@
         </#if>
         <#if userPermission?seq_contains('30')>
         <div title="服务管理" data-options="iconCls:'icon-fwgl'" style="padding:10px">
-            <a href="javascript:openTab('服务创建','server/1/index.shtml','icon-fwcj')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwcj'" style="width: 150px;">服务创建</a>
-            <a href="javascript:openTab('服务分配','server/2/index.shtml','icon-fwfp')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwfp'" style="width: 150px;">服务分配</a>
-            <a href="javascript:openTab('服务处理','server/3/index.shtml','icon-fwcl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwcl'" style="width: 150px;">服务处理</a>
-            <a href="javascript:openTab('服务反馈','server/4/index.shtml','icon-fwfk')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwfk'" style="width: 150px;">服务反馈</a>
-            <a href="javascript:openTab('服务归档','server/5/index.shtml','icon-fwgd')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwgd'" style="width: 150px;">服务归档</a>
+            <a href="javascript:openTab('服务创建','server/1/index','icon-fwcj')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwcj'" style="width: 150px;">服务创建</a>
+            <a href="javascript:openTab('服务分配','server/2/index','icon-fwfp')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwfp'" style="width: 150px;">服务分配</a>
+            <a href="javascript:openTab('服务处理','server/3/index','icon-fwcl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwcl'" style="width: 150px;">服务处理</a>
+            <a href="javascript:openTab('服务反馈','server/4/index','icon-fwfk')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwfk'" style="width: 150px;">服务反馈</a>
+            <a href="javascript:openTab('服务归档','server/5/index','icon-fwgd')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwgd'" style="width: 150px;">服务归档</a>
         </div>
         </#if>
         <#if userPermission?seq_contains('40')>
@@ -76,9 +76,9 @@
         <div title="系统管理"  data-options="iconCls:'icon-item'" style="padding:10px">
             <a href="javascript:openPasswordModifyDialog()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-modifyPassword'" style="width: 150px;">修改密码</a>
             <a href="javascript:logout()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-exit'" style="width: 150px;">安全退出</a>
-            <a href="javascript:openTab('用户信息管理','sysuser/index.shtml','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">用户信息管理</a>
-            <a href="javascript:openTab('角色管理','sysrole/index.shtml','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">角色管理</a>
-            <a href="javascript:openTab('模块管理','sysmodule/index.shtml','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">模块管理</a>
+            <a href="javascript:openTab('用户信息管理','sysuser/index','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">用户信息管理</a>
+            <a href="javascript:openTab('角色管理','sysrole/index','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">角色管理</a>
+            <a href="javascript:openTab('模块管理','module/index','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">模块管理</a>
         </div>
         </#if>
     </div>

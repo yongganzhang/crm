@@ -1,8 +1,12 @@
 package com.shsxt.crm.biz.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.shsxt.crm.core.framework.constant.CrmConstant;
+import com.shsxt.crm.core.framework.dao.BaseQuery;
+
 import java.util.Date;
 
-public class User {
+public class User  extends BaseQuery{
     /**
      * id
      * 
@@ -27,6 +31,9 @@ public class User {
      */
     private String trueName;
 
+    // 角色名称
+    private String  roleName;
+
     /**
      * email
      * 
@@ -49,12 +56,14 @@ public class User {
      * create_date
      * 
      */
+    @JsonFormat(pattern = CrmConstant.DATE_FORMATE_YMDHMS, timezone = "GMT+8")
     private Date createDate;
 
     /**
      * update_date
      * 
      */
+    @JsonFormat(pattern = CrmConstant.DATE_FORMATE_YMDHMS, timezone = "GMT+8")
     private Date updateDate;
 
     public Integer getId() {
@@ -127,5 +136,13 @@ public class User {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

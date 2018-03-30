@@ -2,6 +2,8 @@ package com.shsxt.crm.biz.controller.customer;
 
 import com.shsxt.crm.biz.model.CustomerLoss;
 import com.shsxt.crm.biz.service.ICustomerLossService;
+import com.shsxt.crm.core.framework.annotation.CheckType;
+import com.shsxt.crm.core.framework.annotation.Permission;
 import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,7 @@ public class CustomerLossController extends BaseController {
      * @param customerLoss
      * @return
      */
+
     @RequestMapping("/queryCustomerLossesByParams")
     @ResponseBody
     public Map<String ,Object> queryCustomerLossesByParams (CustomerLoss customerLoss) {

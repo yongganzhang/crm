@@ -26,7 +26,7 @@ public class ReportController extends BaseController{
             case 1:
                 return "customer_gc";
             case 2 :
-                return "error";
+                return "customer_serve";
         }
         return "error";
     }
@@ -41,4 +41,13 @@ public class ReportController extends BaseController{
     public Result queryCustomersGc() {
         return reportService.queryCustomersGc();
     }
+
+
+    @GetMapping("/queryCustomersServerAnalysis")
+    @ResponseBody
+    public  Result queryCustomersServerAnalysis() {
+        return reportService.queryCustomersServerAnalysis();
+    }
+
+
 }

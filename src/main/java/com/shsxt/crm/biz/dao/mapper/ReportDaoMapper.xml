@@ -3,8 +3,20 @@
 <mapper namespace="com.shsxt.crm.biz.dao.ReportDao" >
 
     <select id="queryCustomersGc" resultType="ReportCustomerGC">
-      SELECT  c.`level` 'level', count(1) 'count'  FROM t_customer c WHERE c.is_valid = 1
-    GROUP BY c.`level`
+          SELECT  c.`level` 'level', count(1) 'count'  FROM t_customer c WHERE c.is_valid = 1
+        GROUP BY c.`level`
+    </select>
+
+    <select id="queryCustomersServerAnalysis" resultType="ReportServer">
+        SELECT
+        serve_type 'name',
+        count( 1 ) 'value'
+            FROM
+                t_customer_serve
+            WHERE
+                is_valid = '1'
+            GROUP BY
+                serve_type
     </select>
 
 </mapper>

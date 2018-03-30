@@ -2,6 +2,7 @@ package com.shsxt.crm.biz.service.impl;
 
 import com.shsxt.crm.biz.dao.ReportDao;
 import com.shsxt.crm.biz.model.ReportCustomerGC;
+import com.shsxt.crm.biz.model.ReportServer;
 import com.shsxt.crm.biz.service.IReportService;
 import com.shsxt.crm.core.common.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,22 @@ public class ReportServiceImpl implements IReportService {
         Map<String,Object> map = new HashMap<>();
         map.put("level",level);
         map.put("count",count);
+        return Result.success("查询成功",map);
+    }
+
+    @Override
+    public Result queryCustomersServerAnalysis() {
+
+        List<ReportServer> servers = reportDao.queryCustomersServerAnalysis();
+
+        // 组装 服务名称集合
+        List<String> list = new ArrayList<>();
+        for (ReportServer o: servers ) {
+            list.add(o.getName());
+        }
+        Map<String,Object> map = new HashMap<>();
+        map.put("nameList",list);
+        map.put("servers",servers);
         return Result.success("查询成功",map);
     }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.shsxt.crm.biz.dao.SystemUserRoleDao" >
+
+  <!--  查询用户角色名称 -->
+  <select id="queryUserRoleNameByUid" resultType="string" parameterType="int" >
+      SELECT
+          r.role_name
+      FROM
+          t_user_role u
+          LEFT JOIN t_role r ON ( u.role_id = r.id )
+      WHERE
+          u.user_id = #{uid}
+          AND r.is_valid = '1'
+
+  </select>
+
+    <resultMap id="BaseResult" type="role">
+        <id property="id" column="id"/>
+        <result column="role_name" property="roleName"></result>
+        <result column="role_remark" property="roleRemark"></result>
+        <result column="create_date" property="crateDate"></result>
+        <result column="update_date" property="updateDate"></result>
+        <result column="is_valid" property="isValid"></result>
+
+    </resultMap>
+
+    <sql id="BaseColumn">
+        id, role_name, role_remark, create_date, update_date, is_valid
+    </sql>
+
+
+    <select id="queryAllRolesByParams" parameterType="string" resultMap="BaseResult">
+        SELECT  <include refid="BaseColumn"/>
+        FROM  t_role
+        <where>
+            is_valid = '1'
+            <if test="roleName != null and roleName != ''">
+               AND  role_name =  #{roleName}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
