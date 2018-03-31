@@ -3,6 +3,8 @@ package com.shsxt.crm.core.framework.interceptor;
 import com.shsxt.crm.core.common.util.VerificationLoginUtil;
 import com.shsxt.crm.core.framework.annotation.CheckType;
 import com.shsxt.crm.core.framework.annotation.Permission;
+import com.shsxt.crm.core.framework.annotation.factory.PermissionHandlerBeanFactory;
+import com.shsxt.crm.core.framework.annotation.handler.PermissionHandlerChain;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,10 +42,11 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
             //获取注解对象
             Permission an = method.getAnnotation(Permission.class);
             CheckType type = an.checkType(); //
-            if (type == CheckType.LOGIN) { // 判断是否需要拦截登录
-                boolean userLogin = VerificationLoginUtil.isUserLogin(request);
-                return userLogin;
-            }
+            String[] optValue = an.checkTypeValue(); // opt
+            //进入处理链
+            PermissionHandlerChain permissionNoneHandler = PermissionHandlerBeanFactory.createPermissionNoneHandler();
+            boolean b = permissionNoneHandler.permissionCherckHandler(request, type, optValue);
+            return  b;
         }
         return  true;
     }

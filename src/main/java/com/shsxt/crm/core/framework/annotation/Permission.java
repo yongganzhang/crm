@@ -14,4 +14,6 @@ public @interface Permission {
     //  权限检查的类型
     CheckType checkType() default CheckType.NONE;
 
+     String[] checkTypeValue() default "" ;
+
 }

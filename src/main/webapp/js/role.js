@@ -48,6 +48,7 @@ function openRelatePermissionDlg() {
 
 	$("#rid").val(rows[0].id);
 
+	// 加载querySystemMenu
 	loadModuleData();
 
 	openDlg("dlg02", "关联权限");
@@ -76,7 +77,7 @@ function loadModuleData() {
 				}
 			};
 			// zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
-			var zNodes = data;
+			var zNodes = data.data;
 			ztreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
 		}
 	});
